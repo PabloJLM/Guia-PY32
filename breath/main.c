@@ -6,7 +6,7 @@
 #include "py32f0xx.h"
 
 
-// Tabla de efecto (no se fue de chat para el efecto)
+
 
 const uint8_t wake[50] = {
      0,  2,  4,  6,  8, 10, 12, 14, 16, 18,
