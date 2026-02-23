@@ -30,6 +30,51 @@ Referencia técnica:
 - PY32F002A Datasheet v0.2
 
 ---
+## Configuración de hardware
+
+### Programación mediante ST-Link (SWD)
+
+La programación del microcontrolador se realizó utilizando un programador ST-Link V2 mediante interfaz SWD (Single Wire Debug).
+
+### Conexiones utilizadas
+
+- SWDIO
+- SWCLK
+- GND
+- 3.3V externos
+
+
+
+No se alimenta el microcontrolador desde el ST-Link, ya que si se alimenta el microcontrolador entra en modo de funcionamiento y no programa.
+
+El ST-Link debe recibir una señal externa de 3.3V para poder utilizar ese voltaje de referencia para utilizar el voltaje logico apropiado
+
+---
+
+
+## Base de Programación ESSOP-10
+
+
+Se utiliza una PCB personalizada para facilitar la conexion del microcontrolador hacia pin headers 
+
+Esta base permite:
+
+- Programación rápida del microcontrolador.
+- Validación de continuidad sin soldadura
+
+---
+
+## Esquemático de Conexión SWD
+
+El esquema de conexión incluye:
+
+- SWDIO → SWDIO del micro
+- SWCLK → SWCLK del micro
+- GND → GND común
+- 3.3V → VAPP del ST-Link
+
+---
+
 
 ## Configuración del Proyecto en Keil
 
