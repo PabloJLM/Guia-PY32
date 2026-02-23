@@ -1,5 +1,6 @@
 # PY32F002A – Guía de Programación en Keil uVision  
 
+![Funcionamiento](Imgs/video.gif)
 ---
 
 ## Descripción
@@ -15,12 +16,15 @@ El proyecto implementa:
 
 El código fue desarrollado para el **reto de soldadura SMD**
 
+![reto1](Imgs/reto1.jpeg)
+
 ---
 
 ## Plataforma
 
 - Microcontrolador: PY32F002A  
 - Núcleo: ARM Cortex-M0+  
+![Microcontrolador](Imgs/PY32.jpg)
 - IDE: Keil uVision  
 - Framework: CMSIS (Common Microcontroller Software Interface Standard)
 - Método: Programacion de registros
@@ -35,6 +39,8 @@ Referencia técnica:
 ### Programación mediante ST-Link (SWD)
 
 La programación del microcontrolador se realizó utilizando un programador ST-Link V2 mediante interfaz SWD (Single Wire Debug).
+![ST-LINK V2](Imgs/ST-LINK-V2.jpg)
+
 
 ### Conexiones utilizadas
 
@@ -42,8 +48,6 @@ La programación del microcontrolador se realizó utilizando un programador ST-L
 - SWCLK
 - GND
 - 3.3V externos
-
-
 
 No se alimenta el microcontrolador desde el ST-Link, ya que si se alimenta el microcontrolador entra en modo de funcionamiento y no programa.
 
@@ -57,6 +61,8 @@ El ST-Link debe recibir una señal externa de 3.3V para poder utilizar ese volta
 
 Se utiliza una PCB personalizada para facilitar la conexion del microcontrolador hacia pin headers 
 
+![Socket](Imgs/Socket.jpeg)
+
 Esta base permite:
 
 - Programación rápida del microcontrolador.
@@ -66,6 +72,8 @@ Esta base permite:
 
 ## Esquemático de Conexión SWD
 
+![Diagrama de conexion](Imgs/Diagrama.png)
+
 El esquema de conexión incluye:
 
 - SWDIO → SWDIO del micro
@@ -73,6 +81,9 @@ El esquema de conexión incluye:
 - GND → GND común
 - 3.3V → VAPP del ST-Link
 
+| Pinout STLINK | Pinout PY32 |
+|---------------|-------------|
+| ![](Imgs/ST-LINK_V2%20pinout.png) | ![](Imgs/PY32_pinout.jpg) |
 ---
 
 
