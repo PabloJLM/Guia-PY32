@@ -62,7 +62,87 @@ Se habilita el reloj para el puerto A.
 ## Configuración de Pines
 
 Pines utilizados:
+
 - PA1
 - PA5
 - PA6
 - PA7
+
+Configuraciones:
+
+- Modo: Salida
+- Tipo: Push-Pull
+- Velocidad: Baja
+- Sin resistencias pull-up ni pull-down
+
+Registros: 
+
+- GPIOA->MODER
+- GPIOA->OTYPER
+- GPIOA->OSPEEDR
+- GPIOA->PUPDR
+
+## Delay por software 
+```c
+void delay_ms(uint32_t ms);
+```
+
+Implementado con un for haciendo no operation:
+```c
+__NOP()
+```
+
+## PWM con software 
+Se usa una funcion para definir el brillo que se le asigna a cada pin
+
+```c
+void led_pwm(uint32_t pin, uint8_t brillo);
+```
+Parametros: 
+- pin: número de pin del puerto A
+- brillo: valor entre 0 y 100
+
+Funcionamiento:
+- Se generan 100 ciclos.
+- Se compara contador contra nivel de brillo.
+- Se controla directamente GPIOA->ODR.
+
+## Efectos en LEDs
+Se crea un array o tabla con 50 elementos que representan el brillo 
+
+### Efecto de despertado 
+```c
+const uint8_t wake[50];
+```
+Este efecto simula un encendido en escalon o progesivo
+
+
+### Efecto Respiración
+```c
+const uint8_t resp[50];
+```
+Este efecto se basa en una onda senoidal para dar el efecto suavizado de respiracion 
+Se recomienda aplicarlo a todos los pines para resultados mas llamativos
+
+## Diferencias respecto al Documento Base
+El PDF de guia describe el proceso de creacion del proyecto, como definir el PWM por software y una curva basica de respiracion a modo de enseñar como hacer tus propios efectos 
+
+## Limitaciones
+El sistema tiene limitaciones tecnicas que nacen desde el modo de como se programaron los registros, ya que no es la forma mas eficiente de hacerlo por que: 
+
+- PWM implementado completamente por software.
+- No se utilizan timers.
+- No se configura explícitamente el clock del sistema.
+- Sistema bloqueante dentro del while(1).
+
+
+### Para aplicaciones reales se recomienda:
+- Implementar PWM mediante TIM hardware.
+- Utilizar SysTick para temporización precisa.
+- Separar lógica en módulos independientes.
+- Utilizar interrupciones para eventos con sensores 
+
+## Autoría y Créditos
+Tesla Lab – Universidad Galileo 
+Desarrollo de firmware: Pablo José López  
+Este repositorio es propiedad de Tesla Lab, Universidad Galileo.
