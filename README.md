@@ -56,3 +56,13 @@ Si ocurre error de definición del microcontrolador, agregar al inicio del archi
 ```c
 RCC->IOPENR |= RCC_IOPENR_GPIOAEN;
 ```
+Se habilita el reloj para el puerto A.
+
+
+## Configuración de Pines
+
+Pines utilizados:
+- PA1
+- PA5
+- PA6
+- PA7
