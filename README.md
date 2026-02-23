@@ -1,5 +1,4 @@
 # PY32F002A – Guía de Programación en Keil uVision  
-Implementación con acceso directo a registros (CMSIS)
 
 ---
 
@@ -27,8 +26,8 @@ El código fue desarrollado para el **reto de soldadura SMD**
 - Método: Programacion de registros
 
 Referencia técnica:  
-PY32F002A Reference Manual v1.0
-PY32F002A Datasheet v0.2
+- PY32F002A Reference Manual v1.0
+- PY32F002A Datasheet v0.2
 
 ---
 
@@ -144,5 +143,7 @@ El sistema tiene limitaciones tecnicas que nacen desde el modo de como se progra
 
 ## Autoría y Créditos
 Tesla Lab – Universidad Galileo 
+
 Desarrollo de firmware: Pablo José López  
+
 Este repositorio es propiedad de Tesla Lab, Universidad Galileo.
