@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Programador PY32
+Comment=Flashear firmware .hex en microcontroladores PY32 via ST-Link
+Exec=python3 /home/tesla/Escritorio/tesla/PUYA32/flasher_puya.py
+Icon=utilities-terminal
+Terminal=false
+Categories=Development;Electronics;
+StartupNotify=true
